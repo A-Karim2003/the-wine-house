@@ -57,6 +57,26 @@ html {
   padding: 0.2rem 0;
   position: relative;
   overflow: hidden;
+  cursor: pointer;
+}
+
+.nav-link::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 150%;
+  height: 100%;
+  background-color: #d50000;
+  opacity: 0.8;
+
+  transform: rotate(-40deg) translateX(-4rem);
+  transform-origin: left bottom;
+  transition: left 0.3s ease;
+}
+
+.nav-link:hover::before {
+  left: 110%;
 }
 
 .nav-link a {
@@ -65,7 +85,76 @@ html {
   letter-spacing: 0.1rem;
 }
 
-/* ---------------------------------------------- */
+/* ------------------Arrow buttons------------------- */
+
+.arrow-btn {
+  z-index: 100;
+  position: fixed;
+  top: 50%;
+  background-color: #d50000;
+  padding: 1rem;
+  border-radius: 50%;
+  border: none;
+  opacity: 0.5;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.arrow-btn:hover {
+  opacity: 1;
+}
+
+.arrow-btn i {
+  font-size: 2rem;
+  color: white;
+}
+
+.left-btn {
+  left: 2rem;
+}
+
+.right-btn {
+  right: 2rem;
+}
+
+/* ---------------- Pagination section --------------- */
+
+.page-indicator {
+  z-index: 100;
+  position: fixed;
+  bottom: 2%;
+  left: 3%;
+  width: 100px;
+  height: 66px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+.page-indicator p,
+.page-indicator p span {
+  font-size: 2rem;
+  color: white;
+  font-family: bold;
+}
+
+.pagination-dots {
+  display: flex;
+  gap: 4px;
+}
+
+.pagination-dots .dot {
+  width: 1rem;
+  height: 1rem;
+  border: solid 1px white;
+  border-radius: 50%;
+}
+
+.dot-5 {
+  background-color: white;
+}
+
+/* --------------------------------------------------- */
 
 section {
   width: 100%;
