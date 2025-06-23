@@ -17,6 +17,55 @@ html {
   position: relative;
   overflow: hidden;
 }
+/* ----------------navigation-------------------- */
+
+.navbar {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  max-width: 1440px;
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem;
+  padding-bottom: 0;
+  gap: 1rem;
+}
+
+.logo {
+  width: 4rem;
+}
+
+.logo img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.nav-list {
+  width: 80%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.nav-link {
+  width: 15rem;
+  border: 0.1rem solid #fff;
+  text-align: center;
+  padding: 0.2rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-link a {
+  font-size: 1.5rem;
+  color: #fff;
+  letter-spacing: 0.1rem;
+}
+
+/* ---------------------------------------------- */
 
 section {
   width: 100%;
@@ -173,14 +222,20 @@ section {
 
 .section-4 {
   z-index: 40;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.9)),
-    url(images/section-4-bg.jpg) center no-repeat;
-  background-size: cover;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* filter: blur(10px); */
+}
+
+.blurred-bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.9)),
+    url(images/section-4-bg.jpg) center no-repeat;
+  background-size: cover;
+  filter: blur(3px);
 }
 
 .section-4-heading {
@@ -190,20 +245,99 @@ section {
   margin-bottom: 7rem;
   color: #d50000;
   user-select: none;
+  z-index: 1;
+}
+
+@media (max-width: 980px) {
+  .section-4-heading {
+    font-size: 8rem;
+  }
+}
+
+@media (max-width: 640px), (max-height: 640px) {
+  .section-4-heading {
+    font-size: 6rem;
+  }
 }
 
 .frame-container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   width: 50%;
+  min-width: 50rem;
   border: solid white 1px;
   padding: 1rem;
+  z-index: 1;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.3),
+    rgba(0, 0, 0, 0.9)
+  );
 }
 
 .frame-container img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  opacity: 0.9;
+}
+
+/* -----------------_Section-5_------------------ */
+
+.section-5 {
+  z-index: 60;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.3)),
+    url(images/section-5-bg.jpg) center no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10rem;
+}
+
+footer {
+  max-width: 1440px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 4rem;
+}
+
+.left-side,
+.right-side {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  gap: 2rem;
+  background-color: rgba(0, 0, 0, 0.2);
+  border: 6px;
+}
+
+footer ul li {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+  color: #ddd;
+  border-bottom: solid #d5000034 1px;
+  padding-bottom: 0.5rem;
+}
+
+.middle img {
+  width: 100%;
+}
+
+@media (max-width: 1080px) {
+  footer {
+    flex-direction: column;
+  }
+}
+
+.copyright {
+  position: absolute;
+  bottom: 2rem;
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+  color: white;
+  letter-spacing: 0.2rem;
 }
