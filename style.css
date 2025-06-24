@@ -13,7 +13,7 @@ html {
 }
 .container {
   height: 100vh;
-  width: 100%;
+  width: 100vw;
   position: relative;
   overflow: hidden;
 }
@@ -157,16 +157,15 @@ html {
 /* --------------------------------------------------- */
 
 section {
-  width: 100%;
+  width: 100vw;
   height: 100%;
   position: absolute;
-  /* left: 0; */
+  transition: all 1s ease;
 }
 
 /* ----------------_Section_1-------------------- */
 
 .section-1 {
-  z-index: 10;
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.4)),
     url(images/section-1-bg.jpg) center no-repeat;
   background-size: cover;
@@ -192,7 +191,6 @@ section {
 /* -----------------_Section-2_------------------ */
 
 .section-2 {
-  z-index: 20;
   background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9)),
     url(images/section-2-bg.jpg) center no-repeat;
   background-size: cover;
@@ -257,7 +255,6 @@ section {
 /* -----------------_Section-3_------------------ */
 
 .section-3 {
-  z-index: 30;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.9)),
     url(images/section-3-bg.jpg) center no-repeat;
   background-size: cover;
@@ -310,7 +307,6 @@ section {
 /* -----------------_Section-4_------------------ */
 
 .section-4 {
-  z-index: 40;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -372,7 +368,6 @@ section {
 /* -----------------_Section-5_------------------ */
 
 .section-5 {
-  z-index: 60;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.3)),
     url(images/section-5-bg.jpg) center no-repeat;
   background-size: cover;
@@ -429,4 +424,20 @@ footer ul li {
   text-align: center;
   color: white;
   letter-spacing: 0.2rem;
+}
+
+.section-1 {
+  z-index: 0;
+}
+.section-2 {
+  z-index: 0;
+}
+.section-3 {
+  z-index: 0;
+}
+.section-4 {
+  z-index: 1;
+}
+.section-5 {
+  z-index: 0;
 }
