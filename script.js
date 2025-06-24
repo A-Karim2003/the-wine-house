@@ -1,11 +1,7 @@
 "use strict";
 
 /*
-<<<<<<< HEAD
-Explanation:
-=======
 Explanation for throtlling:
->>>>>>> slider-nav
 
 1. `isThrottled` is initially false, meaning scroll actions are allowed.
 
@@ -33,12 +29,6 @@ window.addEventListener("wheel", (e) => {
     isThrottled = false;
   }, 1000);
 
-<<<<<<< HEAD
-  if (e.deltaY > 0) {
-    counter++;
-    if (counter > 5) counter = 1;
-  } else if (e.deltaY < 0) {
-=======
   if (e.deltaY > 0) slideSection("right");
   else if (e.deltaY < 0) slideSection("left");
 });
@@ -66,18 +56,10 @@ function slideSection(leftOrRight) {
   });
 
   if (leftOrRight === "left") {
->>>>>>> slider-nav
     counter--;
     if (counter < 1) counter = 5;
   }
 
-<<<<<<< HEAD
-  const section = document.querySelector(`.section-${counter}`);
-
-  section.style.left = `-100vw`;
-
-  console.log(section);
-=======
   if (leftOrRight === "right") {
     counter++;
     if (counter > 5) counter = 1;
@@ -104,5 +86,4 @@ navList.addEventListener("click", (e) => {
   const index = Number(navLink.dataset.index);
   counter = index;
   slideSection();
->>>>>>> slider-nav
 });
